@@ -162,6 +162,7 @@
 				3F5A63E61877579800C3D52F /* Sources */,
 				3F5A63E71877579800C3D52F /* Frameworks */,
 				3F5A63E81877579800C3D52F /* Resources */,
+				3F5A6423187757B900C3D52F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -243,6 +244,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F5A6423187757B900C3D52F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "env > env.txt\n\nFILENAME_IN_BUNDLE=env.txt\n\nBUILD_APP_DIR=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n\ncp $SRCROOT/env.txt $BUILD_APP_DIR/env.txt";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F5A63E61877579800C3D52F /* Sources */ = {

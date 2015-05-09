@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *envTextView;
 @end
 
 @implementation ViewController
@@ -18,12 +18,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *envPath = [[NSBundle mainBundle] pathForResource:@"env" ofType:@"txt"];
+    NSString *env = [[NSString alloc] initWithContentsOfFile:envPath encoding:NSUTF8StringEncoding error:nil];
+    self.envTextView.text = env;
+    
+    NSLog(@"%@",env);
 }
 
 @end
